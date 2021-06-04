@@ -1,0 +1,10 @@
+config {
+  type: "view"
+}
+
+SELECT
+  *
+FROM
+  `bigquery-public-data.world_bank_intl_debt.international_debt`
+WHERE
+  country_code = 'IDN'
