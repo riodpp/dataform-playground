@@ -1,0 +1,14 @@
+config {
+  type: "view"
+}
+
+SELECT
+  indicator_code,
+  indicator_name,
+  SUM(value) AS sum_value
+FROM
+  ${ref("idn_debt")}
+GROUP BY
+  1,
+  2
+HAVING SUM(value) IS NOT NULL
