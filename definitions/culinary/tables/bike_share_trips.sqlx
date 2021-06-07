@@ -1,0 +1,13 @@
+-- This is example of declaration
+config {
+  type: "declaration",
+  database: "bigquery-public-data",
+  schema: "austin_bikeshare",
+  name: "bikeshare_trips",
+  description: "raw of trip data bike share in Austin"
+}
+
+-- select *
+-- from 
+--   ${ref("table_name")} / schema.table_name
+-- read more about ref() in the documentation tab -->

@@ -1,0 +1,14 @@
+config {
+  type: "table",
+  tags: ["daily"]
+}
+
+-- Most popular route
+SELECT
+    start_station_name,
+    end_station_name,
+    COUNT(1) AS times_routes_take,
+    SUM(duration_minutes) AS total_minute 
+FROM ${ref("bikeshare_trips")}
+GROUP BY 1,2
+ORDER BY 3 DESC

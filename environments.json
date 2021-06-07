@@ -1,9 +1,37 @@
 {
-    "environments": [
+  "environments": [
+    {
+      "name": "production",
+      "configOverride": {},
+      "schedules": [
         {
-            "name": "production",
-            "configOverride": {},
-            "gitRef": "master"
+          "name": "hourly_update",
+          "cron": "4 */1 * * *",
+          "options": {
+            "includeDependents": true
+          },
+          "notify": [
+            {
+              "channel": "hourly_update_notification_channel",
+              "statuses": [
+                "SUCCESS",
+                "FAILURE"
+              ]
+            }
+          ]
         }
-    ]
+      ],
+      "gitRef": "master"
+    }
+  ],
+  "notificationChannels": [
+    {
+      "name": "hourly_update_notification_channel",
+      "email": {
+        "to": [
+          "perkasaid.rio@gmail.com"
+        ]
+      }
+    }
+  ]
 }

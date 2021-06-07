@@ -1,0 +1,8 @@
+config {
+  type: "declaration",
+  database: "bigquery-public-data",
+  schema: "austin_bikeshare",
+  name: "bikeshare_stations",
+  description: "dimension of bikeshare stations"
+}
+
