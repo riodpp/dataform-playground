@@ -7,12 +7,10 @@
         {
           "name": "daily_update",
           "cron": "35 22 * * mon,tue,wed,thu,fri,sat,sun",
-          "tags": [
-            "daily"
-          ],
           "options": {
             "includeDependents": true
           },
+          "disabled": true,
           "notify": [
             {
               "channel": "hourly_update_notification_channel",
